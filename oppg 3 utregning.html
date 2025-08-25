@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <p> id="average"</p>
+    <p> <span id="average"></span></p>
 
     <script>
         const dad = 37
@@ -18,8 +18,10 @@
 
         const totalAge = dad+mom+daughter+son
         
-        const average = totalage / 4
-        
+        const summary = "gjennomsnittsalder er " + average + " og totalalderen er " + totalAge
+
+        document.getElementById("average").innerHTML=summary
+                
     </script>
     
 </body>
