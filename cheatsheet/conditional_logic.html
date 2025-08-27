@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional logic - Clean Sheet</title>
+</head>
+<body>
+    <h2>Are you qualified for taking the drivers license?</h2>
+    <p id="carmsg"></p>
+    <h2>Can the player open the door?</h2>
+    <p id="doormsg"></p>
+    <h2>Can i retire?</h2>
+    <p id="retire"></p>
+
+    <script>
+
+//Drivers license
+const age = 22
+const tg_passed = true
+//If-test
+if(age >= 18 && tg_passed === true){
+document.getElementedByID("carmsg").innerHTML = "Yes"
+} else{
+    document.getElementedById("carmsg").innerHTML = "No"
+}
+
+//Check if door is locked, eventually if player has key in backpack
+const door_locked = true
+const backpack = "key"
+
+let utskrift = document.getElementedById("doormsg")
+
+if(door_locked === false){
+    utskrift.innerHTML = "Yes"
+} else {
+    if(backpack === "key"){
+        utskrift.innerHTML = "Yes"
+    } else {
+        utskrift.innerHTML = "No"
+    }
+}
+
+let retiremsg = document.getElementedById("retire")
+
+//Check of possible retire age
+if(age >= 62 && age < 67) {
+    retiremsg.innerHTML = "You can retire with AFP"
+} else if(age >= 67) {
+    retiremsg.innerHTML = "You can retire with full pension"
+} else {
+    retiremsg.innerHTML = `You can retire with AFP in ${62 - age} years. and full pension in ${67 - age} years.`
+}
+
+    </script>
+
+</body>
+</html>
