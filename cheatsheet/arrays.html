@@ -3,38 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array</title>
+    <title>Document</title>
 </head>
 <body>
-<script> 
-const handleliste = ["Dinner", "Bread", "Milk", "Egg", "Bacon"] //???
+    <h1> Arrayer og metoder</h1>
+    <p>Dette juksearket fungerer best med konsollen åpen</p>
+    <h3>Filmarray (<span id="moviecount">0</span> filmer)</h3>
+    <p>Film på index 2: <span id="movieindex">Ingen film funnet</span></p>
+ 
+    <script>
+    const moviearray = ["Ringenes herre", "Star Wars Episode 1: Phantom Menace", "Titanic", "Nobody", "John Wick 4", 
+    "Howls Moving Castle", "Lock Back", "No Country For Old Men", "Dont Mess With the Zohan"]
+    
+    //sorterer array alfabetisk a-å
+   // moviearray.sort()
+    //sorterer array alfabetisk å-a
+   // moviearray.reverse()
+    //sorterer og reserverer med én enkelt kodelinje
+   
+    moviearray.push("Tetris")
+    moviearray.sort().reverse()
 
-console.log("Shoppinglist", shoppinglist)
+    moviearray.sploce(3, 1)
 
-const produkter = [
-    {
-    id: "1",
-    name: "Pokémon",
-    year: 1995
-},
-{ 
-    id: "2",
-    name: "Valheim",
-    year: 2021
-},
-{ 
-    id: "3",
-    name: "Red Dead Redemption",
-    year: 2018
-}
-]
-console.log("Produktliste", produkter)
 
-produkter.map((prod) => {
-    console.log(prod.year)
+    const movieeexists = moviearray.includes("Tetris")
+    console.log("Finnes Tetris?", movieexists)
 
-})
+    console.log(moviearray)
 
-</script>
+    document.getElementById("moviecount").innerHTML = moviearray.length
+
+    let index = 4
+    document.getElementById("movieindex").innerHTML = index
+    documet.getElementById("movietitle").innerHTML = moviearray[2]
+
+    //Tallsortering
+    const numbersarray = [32, 31, 6, 4, 104, 111, 1000]
+
+    //Tall sortert
+    numbersarray.sort(function(a, b) {return a - b})
+    //Tall sortert og reversert
+    numbersarray.sort(function(a, b) {return b - a})
+
+    console.log(numbersarray)
+
+    <script>
+
 </body>
 </html>
