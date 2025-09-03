@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Øvingsoppgave 1</title>
 </head>
 <body>
+    <p id="utskrift"></p>
+    <!-- Gjort klar en <p>-tag med id utskrift som kan skrves til via JavaScript -->
+    <script>
+        //Deklarerer en variabel kalt navn med verdien Anna som en tekststreng
+        const navn = "Anna"
+        //Gjør klar en variabel som skal inneholde teksten vi skal skrive ut
+        let utskrift
+
+        //Så gjør vi en if-test. Hvis variabelen navn inneholder tekstrengen "Anna", er dette riktig.
+        //Da kan jeg skrive ut at jeg heter dette.
+        //Men, hvis navn inneholder hva som helst annet enn "Anna" (else), skal vi skrive ut "Jeg heter ikke NAVN van Gemert"
+        if (navn === "Sofie") {
+            utskrift = "Mitt navn er " + navn + "van Gemert"
+        } else {
+            utskrift = "Jeg heter ikke " + navn + "van Gemert"
+        }
+        //Når if-testen er ferdig kan vi skrive ut det som ligger lagret i variabelen utskrift til HTML-elementet med i d utskrift
+        document.getElementByID("utskrift").innerHTML = utskrift
+    </script>
     
 </body>
 </html>

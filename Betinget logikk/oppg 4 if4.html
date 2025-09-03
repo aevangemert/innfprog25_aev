@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Doble betingelser</title>
 </head>
 <body>
-    
+    <p id="utskrift"></p>
+
+<!--Kommentar?-->
+
+<script>
+//Deklarerer to variabler for oppnådd karakter i to kurs
+const ITF19019_grade = "A";
+const iTF10511_grade = "F";
+//Deklarerer to variabler med boolske verdier for å se om kurs er fullført
+const ITF19019_passed = ITF19019_grade === "F" ? true : false;
+const iTF10511_passed = iTF10511_grade === "F" ? true : false;
+//Deklarerer en variabel for telling
+let countPassed = 0;
+//En if-test for å sjekke om ITF19019 er bestått (_passed= true)
+//Hvis den er det, skal vi oppdatere telleren i variabelen countPassed med 1
+if (ITF19019_passed === true) {
+countPassed += 1;
+}
+
+//En if-test for å sjekke om ITF10511 er bestått (_passed = true)
+//Hvis den er det , skal vi oppdatere telleren i variabelen countPassed med 1
+if (iTF10511_passed === true) {
+    countPassed += 1;
+}
+//Lager en variabel med tekst som skal printes, ved bruk av template literals
+const printText = `Du har bestått ${countPassed} av 2 kurs`;
+//Skriver ut teksten lagret i variabelen printText til HTML-elementet med i d utskrift
+document.getElementById("utskrift").innerHTML = printText;
+</script>
 </body>
 </html>
