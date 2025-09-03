@@ -20,17 +20,19 @@ const age = 22
 const tg_passed = true
 //If-test
 if(age >= 18 && tg_passed === true){
-document.getElementedByID("carmsg").innerHTML = "Yes"
+document.getElementByID("carmsg").innerHTML = "Yes"
 } else{
-    document.getElementedById("carmsg").innerHTML = "No"
+    document.getElementById("carmsg").innerHTML = "No"
 }
 
-//Check if door is locked, eventually if player has key in backpack
+//Declares the variables door_locked with the value true and backpack with the value "key"
 const door_locked = true
 const backpack = "key"
 
-let utskrift = document.getElementedById("doormsg")
+let utskrift = document.getElementById("doormsg")
 
+//Check if door is locked, or if player has key in backpack
+//If the door is open we write out "Yes". If the door is locked and the player has "key" in backpack, we write out "Yes", else we write out "No"
 if(door_locked === false){
     utskrift.innerHTML = "Yes"
 } else {
@@ -41,7 +43,8 @@ if(door_locked === false){
     }
 }
 
-let retiremsg = document.getElementedById("retire")
+//Saving HTML-element in a variable to ble able to refer to it more easily later
+let retiremsg = document.getElementById("retire")
 
 //Check of possible retire age
 if(age >= 62 && age < 67) {
