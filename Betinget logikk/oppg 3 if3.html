@@ -41,9 +41,9 @@
 
     //Så kontatinerer vi (kan også fordelaktig bruke template literals) variabler 
     //for telling og tekst som en verdi i variabelen utskrift
-    utskift = "Gutter: " + antall_gutter + ", Jenter: " + antall_jenter;
+    utskrift = `Gutter: ${antall_gutter}, Jenter: ${antall_jenter}`
     //og skriver ut innholdet i utskrift til HTML-elementet med id utskrift
-    document.getElementById("utskrift").innerHTML = utskift;
+    document.getElementById("utskrift").innerHTML = utskrift;
     </script>
   </body>
 </html>

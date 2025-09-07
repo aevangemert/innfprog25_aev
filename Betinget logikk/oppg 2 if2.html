@@ -20,7 +20,7 @@
         //Andre betingelse er dersom du er større eller lik 18 OG minre eller lik 62: lagre teksten "...myndig, klar for studier" i variabelen utskrift
         //For alle andre betingelser (else): lagre teksten "...pensjonsklar" i variabelen utskrift
         if (alder < 18) {
-            utskift = "Du er ikke myndig";
+            utskrift = "Du er ikke myndig";
         } else if (alder >= 18 && alder <= 62) {
             utskrift = "Du er myndig og klar for studier eller arbeidslivet";
         } else {
@@ -28,7 +28,7 @@
         }
 
         //Til slutt; skriv teksten lagret i variabelen utskrift til <p>-tagen med id utskrift:
-            document.getElementById("utskrift").innerHTML = Utskrift;
+            document.getElementById("utskrift").innerHTML = utskrift;
         </script>
    </body>
 </html>

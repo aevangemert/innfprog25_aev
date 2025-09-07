@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimalsList</title>
+</head>
+<body>
+    <ul id ="animals"> 
+       
+    </ul>
+    <script>
+        const animals = ["Dog", "Cat", "Seagull", "Horse", "Hedgehog", "Squirell", "Sheep", "Goat", "Pig", "Cow"]
+        //kan ikke bruke const da den ikke kan endres, dermed bruk let
+        let htmlString=""
+        for (let i = 0; i<animals.length; i++) {
+    
+                htmlString+=`<li>${animals[i]}</li>`
+        }
+        document.getElementById("animals").innerHTML=htmlString
+    </script>
+  </body>
+</html>

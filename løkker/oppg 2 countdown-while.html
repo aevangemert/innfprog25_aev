@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+</head>
+<body>
+    <ul id ="listami"> 
+        <li>Laika tar</li>
+        <li>Rakett</li>
+        <li>til Månen</li>
+        <li>vi teller ned!</li>
+    </ul>
+    <script>
+        //kan ikke bruke const da den ikke kan endres, dermed bruk let
+        let htmlString=document.getElementById("listami").innerHTML
+        let i = 10
+        while (i >=0) {
+            if (i == 0)
+            {
+                    htmlString += '<li style="color:red;">We have take-off! <img src="https://www.nysgjerrigper.no/siteassets/bilder-artikler/2019-3/hund-i-rakett-tank.png" width="100"></li>'
+            }
+            else 
+            {
+                htmlString+=`<li>${i}...</li>`
+            }
+            i -- 
+        }
+        document.getElementById("listami").innerHTML=htmlString
+    </script>
+  </body>
+</html>

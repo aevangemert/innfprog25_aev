@@ -17,13 +17,13 @@
         //Så gjør vi en if-test. Hvis variabelen navn inneholder tekstrengen "Anna", er dette riktig.
         //Da kan jeg skrive ut at jeg heter dette.
         //Men, hvis navn inneholder hva som helst annet enn "Anna" (else), skal vi skrive ut "Jeg heter ikke NAVN van Gemert"
-        if (navn === "Sofie") {
-            utskrift = "Mitt navn er " + navn + "van Gemert"
+        if (navn === "Anna") {
+            utskrift = `Mitt navn er ${navn} van Gemert`
         } else {
-            utskrift = "Jeg heter ikke " + navn + "van Gemert"
+            utskrift = `Jeg heter ikke ${navn} van Gemert`
         }
         //Når if-testen er ferdig kan vi skrive ut det som ligger lagret i variabelen utskrift til HTML-elementet med i d utskrift
-        document.getElementByID("utskrift").innerHTML = utskrift
+        document.getElementById("utskrift").innerHTML = utskrift
     </script>
     
 </body>
