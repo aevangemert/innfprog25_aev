@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+</head>
+  <body>
+    <script>
+        //for-løkker
+        //tar imot tre parametere: Initialisering,
+        //betingelse og inkrementasjon/dekrementasjon
+        for(let teller= 0; teller <= 10; teller ++){
+            console.log(teller)
+        }
+
+        const start = 0
+        const slutt = 100
+        let sum = 0
+
+        //legg sammen tall mellom a og b
+        for(let teller = start; teller <= slutt; teller++){
+            sum+= teller
+        }
+
+        console.log(sum)
+
+        //gangetabellen
+        let gangetabellen = []
+
+        for(let n = 1; n <= 10; n++){
+            let row = []
+            for(let i = 1; i <= 10; i++){
+                row.push(n * i)
+            }
+            gangetabellen.push(row)
+        }
+
+        console.log(gangetabellen)
+
+        //sjekk om tall er delelig på x
+        const x = 0
+        const z = 3
+        const y = 100
+
+        for(let teller = x; teller <= y; teller++){
+            if(teller % z === 0){
+                console.log(`${teller},`)
+            }
+        }
+
+        const months = ["Januar", "Februar", "Mars", "April", "Mai", "Juni",
+        "Juli", "August", "September", "Oktober", "November", "Desember"]
+
+        const date = {
+            year: new Date().getFullYear(),
+            month: new Date().getMonth() + 1,
+        }
+
+        console.log(date)
+
+        const famObj= [{
+            fname: "Anna",
+            birthyear: 2003,
+            birthmonth: 6,
+            birthday: 10
+        },
+        {
+            fname: "Thorkil",
+            birthyear: 2005,
+            birthmonth: 3,
+            birthday:2
+        },
+        {
+            fname: "Line",
+            birthyear: 1973,
+            birthmonth: 3,
+            birthday: 10
+        },
+        {
+            fname: "Ylva",
+            birthyear: 2009,
+            birthmonth: 4,
+            birthday: 15
+        }
+    ]
+        for(let teller = 0; teller < famObj.length; teller++){
+            if(date.month <= famObj[teller].birthmonth){
+                console.log(`${famObj[teller].fName} fyller ${date.year - famObj[teller].birthyear}
+                år i ${months[famObj[teller].birthmonth - 1]}`)
+            } else{
+                console.log(`${famObj[teller].fName} fylte ${date.year - famObj[teller].birthyear}
+                år i ${months[famObj[teller].birthmonth -1]}`)
+            }
+        }
+
+        //for-in-løkker
+        const person = {
+            name: "Anna",
+            age: (new Date().getFullYear())-2003,
+            location: "Halden"
+        }
+
+            for(let key in person){
+                console.log(key + ":" + person[key])
+            }
+
+        //forEach-"løkker"
+        const numbers = [4, 3, 5, 6, 10, 100, 24]
+        let total = 0
+
+        numbers.forEach((item) => total += item)
+
+        console.log(total)
+
+        //while-løkker
+        let teller = 1
+        while(teller <10){
+            teller++
+            console.log(teller)
+        }
+
+    </script>
+  </body>
+</html>
