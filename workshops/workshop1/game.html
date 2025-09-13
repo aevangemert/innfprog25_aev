@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Workshop Game</title>
+    <link href="style.css" rel="stylesheet" media="screen" />
+    <link rel="apple-touch-icon" sizes="180x180" href="meta/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="meta/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="meta/favicon-16x16.png">
+    <link rel="manifest" href="meta/site.webmanifest">
+    <link rel="mask-icon" href="meta/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <section id="player">
+            <ul>
+                <li><img src="icons/shield.svg"> <span id="playerName">Marius</span></li>
+                <li><img src="icons/energydrink.svg" title="energy"> <span id="energy">3</span></li>
+                <li><img src="icons/notebook.svg"> <span id="notebookItems">0</span></li>
+                <li><img src="icons/solution.svg"> <span id="points">0</span> poeng</li>
+                <li><img src="icons/clock.svg"> <span id="duration">0</span></li>
+            </ul>
+        </section>
+        <img src="icons/c3_logo.svg" alt="Code Concept Collector" />
+        <nav>
+            <button id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
+            <button id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
+        </nav>
+    </header>
+    <main>
+        
+        <section id="notebook">
+            <div id="notebook-page">
+                
+                <h2>Notater</h2>
+                <table>
+                    <tr>
+                        <td><img src="icons/variable.svg" alt="" /></td>
+                        <td>Variabler</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/array.svg" alt="" /></td>
+                        <td>Arrayer</td>
+                        <td>1</span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/loop.svg" alt="" /></td>
+                        <td>Løkker</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/function.svg" alt="" /></td>
+                        <td>Funksjoner</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section id="info" class="hidden">
+            <div id="info-page">
+                <h2>Info / Hvordan spille C<sup>3</sup></h2>
+                <p>Målet med spiller er at programmeringsstudenten Fortran <span class="illustration">(<img src="icons/fortran.svg" />)</span> skal samle programmeringskonseptene variabler <span class="illustration">(<img src="icons/variable.svg" />)</span>, arrayer <span class="illustration">(<img src="icons/array.svg" />)</span>, løkker <span class="illustration">(<img src="icons/loop.svg" />)</span> og funksjoner <span class="illustration">(<img src="icons/function.svg" />)</span> i kladdeboka <span class="illustration">(<img src="icons/notebook.svg" />)</span> si.</p>
+                <p>Etterhvert kan Fortran bruke de oppsamlede konseptene for å løse oppgaver <span class="illustration">(<img src="icons/puzzle.svg" />)</span>. Det koster en energi <span class="illustration">(<img src="icons/energydrink.svg" />)</span>. Dersom Fortran ikke løser oppgaven korrekt, mister han enda en energi, i tillegg til å ha brukt opp programmeringskonseptene han har brukt i oppgaven.</p>
+                <p>Gjennom spillet samler Fortran de nevnte konseptene og energidrikker. Men, det vil også komme bugs <span class="illustration">(<img src="icons/bug.svg" />)</span>! Pass på så Fortran ikke samler bugs, de koster det en energidrikke og løse opp!</p>
+                <h2>Hvordan spille</h2>
+                <p>Bruk piltastene for å flytte Fortran rundt og samle konsepter og energidrikker, og unngå bugs.</p>
+                <p>Klikk knappen "Åpne kladdeboka", eller snarveien N for å åpne kladdeboka og se hvor mange konsepter Fortran har samlet.</p>
+                <p>Gå på en oppgave når denne dukker opp for å løse en oppgave for å score poeng. Du får 10 poeng for å løse en oppgave, 1 poeng for hvert konsept du samler.</p>
+            </div>
+        </section>
+    </main>
+    <script>
+        //PREPARE GAME CONFIG AND VARIABLES
+        //TODO: config
+       
+        //TODO: notebook
+        
+
+        //TODO: print playerinfo to HTML
+        
+        //TODO: print notebook info to HTML
+
+        //(BONUS) TODO: function for all prints
+        
+    </script>
+</body>
+</html>
