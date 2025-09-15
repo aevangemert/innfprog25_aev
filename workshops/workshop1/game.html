@@ -17,7 +17,7 @@
     <header>
         <section id="player">
             <ul>
-                <li><img src="icons/shield.svg"> <span id="playerName">Marius</span></li>
+                <li><img src="icons/shield.svg"> <span id="playerName"></span></li>
                 <li><img src="icons/energydrink.svg" title="energy"> <span id="energy">3</span></li>
                 <li><img src="icons/notebook.svg"> <span id="notebookItems">0</span></li>
                 <li><img src="icons/solution.svg"> <span id="points">0</span> poeng</li>
@@ -29,7 +29,7 @@
             <button id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
             <button id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
         </nav>
-    </header>
+     </header>
     <main>
         
         <section id="notebook">
@@ -40,22 +40,22 @@
                     <tr>
                         <td><img src="icons/variable.svg" alt="" /></td>
                         <td>Variabler</td>
-                        <td>0</td>
+                        <td><span id="variables"></span></td>
                     </tr>
                     <tr>
                         <td><img src="icons/array.svg" alt="" /></td>
                         <td>Arrayer</td>
-                        <td>1</span></td>
+                        <td><span id="arrays"></span></td>
                     </tr>
                     <tr>
                         <td><img src="icons/loop.svg" alt="" /></td>
                         <td>Løkker</td>
-                        <td>2</td>
+                        <td><span id="loops"></span></td>
                     </tr>
                     <tr>
                         <td><img src="icons/function.svg" alt="" /></td>
                         <td>Funksjoner</td>
-                        <td>1</td>
+                        <td><span id="functions"></span></td>
                     </tr>
                 </table>
             </div>
@@ -72,20 +72,77 @@
                 <p>Gå på en oppgave når denne dukker opp for å løse en oppgave for å score poeng. Du får 10 poeng for å løse en oppgave, 1 poeng for hvert konsept du samler.</p>
             </div>
         </section>
-    </main>
+      </main>
     <script>
         //PREPARE GAME CONFIG AND VARIABLES
         //TODO: config
+        //fjerner man spilletnavnet, vil det stå "waiting for player i spillet"
+        const gameConfig = {
+            player: "Anna",
+            energy: 5,
+            points: 10,
+            duration: 138
+        }
        
         //TODO: notebook
-        
+        const notebook = {
+            variables: 2,
+            arrays: 4,
+            loops: 3,
+            functions: 7 
+        }
 
         //TODO: print playerinfo to HTML
+        //vi kan lagre HTML-elementer i variabler for lettere testing/kontroll i logg
+        let playerName = document.getElementById("playerName")
+
+        if(gameConfig.player === ""){
+            document.getElementById("playerName").innerHTML = "waiting for player..."
+           
+        }else{
+            document.getElementById("playerName").innerHTML = gameConfig.player
+        }
         
+        //document.getElementById("playerName").innerHTML= gameConfig.playe
+        //playerName.innerHTML = gameConfig.player
+        document.getElementById("energy").innerHTML = gameConfig.energy
+        document.getElementById("points").innerHTML = gameConfig.points
+        document.getElementById("duration").innerHTML = gameConfig.duration
+
         //TODO: print notebook info to HTML
+        document.getElementById("variables").innerHTML = notebook.variables
+        document.getElementById("arrays").innerHTML = notebook.arrays
+        document.getElementById("loops").innerHTML = notebook.loops
+        document.getElementById("functions").innerHTML = notebook.functions
 
         //(BONUS) TODO: function for all prints
-        
+        function updateStaticUI(){
+
+        let playerNameHTML = document.getElementById("playerName")
+
+        if(gameConfig.player === ""){
+            document.getElementById("playerName").innerHTML = "waiting for player..."
+            for(key in gameConfig){
+                key === playerName ? playerName : gameConfig[key] = 0
+            }
+            for(key in notebook){
+                notebook[key] = 0
+            }
+        }else{
+            document.getElementById("playerName").innerHTML = gameConfig.player
+        }
+
+            document.getElementById("energy").innerHTML = gameConfig.energy
+            document.getElementById("points").innerHTML = gameConfig.points
+            document.getElementById("duration").innerHTML = gameConfig.duration
+
+            document.getElementById("variables").innerHTML = notebook.variables
+            document.getElementById("arrays").innerHTML = notebook.arrays
+            document.getElementById("loops").innerHTML = notebook.loops
+            document.getElementById("functions").innerHTML = notebook.functions
+        }
+
+        updateStaticUI()
     </script>
-</body>
+  </body>
 </html>
