@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbeidskrav 1 - Innføring i programmering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="ak1.css" rel="stylesheet" media="screen">
+</head>
+  <body>
+    <header>
+        <h1 id="companyname"></h1>
+        <form>
+            <input type="text" />
+            <button>Søk</button>
+        </form>
+    </header>
+    <main>
+        <section id="employee_list">
+            <article class="card">
+                <img src="avatar.png" alt="Navn Navnesen" />
+                <p>Navn Navnesen<br />navn@email.com</p>
+            </article>
+            <article class="card">
+                <img src="avatar.png" alt="Navn Navnesen" />
+                <p>Navn Navnesen<br />navn@email.com</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>
+            <a href="https://www.flaticon.com/free-icons/user" title="female icons">User icons created by Prosymbols Premium, Freepik, Smashicons, and Vectors Market - found at Flaticon</a>
+        </p>
+    </footer>
+
+    <scripttt>
+        //Variabel with company name
+        const company = "Programmeriet"
+
+        //List of employees
+        const employees = [
+            {name: "Hans Hansen", position: "Programmerer", email: "hans.hansen@email.com", office: "316", image: "man"},
+            {name: "Jens Jensen", position: "Programmerer", email: "jens.jensen@email.com", office: "323", image: "man2"},
+            {name: "Trine Trinesdotter", position: "Programmerer", email: "trine.trinesdotter@email.com", office: "304", image: "woman"},
+        ]
+
+        //Secret keys to access url and images
+        let images_folder = "img
+        let secret_key = 0
+        let ak_key
+        
+        //Turn on or off safeguard to allow system to run
+        const safeguard = false
+        
+        //Control of safeguard to create image folder name
+        if(safeguard === true) {
+            ak_key = secret_key + 1
+        }
+        const safe_images_folder = images_folder += ak_key
+        console.logg("Image folder: " + safe_images_folder)
+
+        let HTML_employees = ""
+
+        //Control of safeguard to print employee list
+        if(safeguard === true) {
+            employees.map((e) => HTML_employees += `<article class="card">
+                    <img src="${safe_images_folder}/${e.image}.png" alt="${e.name}" />
+                    <p><strong>${e.name}</strong></p>
+                    <p>${e.position} | Kontor: ${e.office}</p>
+                    <p>${e.email}</p>
+                </article>`)
+
+                document.getElementbyId("employee_list").innerHTML = HTML_employeeees
+        }
+
+        //System prints
+        document.getElementById("companyname").innerHTML = company
+    </script>
+  </body>
+</html>

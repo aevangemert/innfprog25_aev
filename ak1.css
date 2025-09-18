@@ -1,0 +1,70 @@
+body {
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+            padding: 0;
+            margin: 0;
+        }
+        header, main, div, article, aside {
+            box-sizing: border-box;
+        }
+        header {
+            background: rgb(192, 233, 246);
+            color: #000;
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        input {
+            border: 1px solid rgb(114, 152, 164);
+            border-radius: 5px;
+            padding: .5rem;
+            font-family: "Open Sans", sans-serif;
+            margin-right: 1rem;
+        }
+        main {
+            width: 100%;
+            max-width: 1000px;
+            margin: 1rem auto;
+        }
+        #employee_list {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .card {
+            max-width: 31%;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 1rem;
+        }
+        .card img {
+            max-width: 100%;
+        }
+        footer {
+            width: 100%;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+
+            a {
+                color: rgb(192, 233, 246);
+            }
+        }
+        @media (max-width: 768px) {
+            #employee_list {
+                flex-direction: column;
+            }
+            .card {
+                max-width: 100%;
+            }   
+            .card img {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
