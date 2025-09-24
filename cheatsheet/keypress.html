@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tastetrykk</title>
+    <style>
+        html{
+            width: 100dvw;
+            height: 100dvh;
+        }
+        #box{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body> 
+    <!--SE OVER DETTE HJEMME-->
+    <div id="box"></div>
+    <script>
+
+        const box = document.getElementById("box")
+        //const array =[]
+
+        document.addEventListener("keydown", (event) => {
+            if(event.key == "ArrowLeft"){
+                console.log("Key pressed = " + event.key)
+                box.style.right += 10 + "px"
+                //array.push("Hei")
+                //console.log(array)
+            } else if(event.key == "ArrowRight"){
+                box.style.left += 10 + "px"
+            }
+            console.log("Key pressed = " + event.ley)
+        })
+    </script>
+  </body>
+</html>
