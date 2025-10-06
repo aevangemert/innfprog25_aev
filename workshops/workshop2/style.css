@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+
+:root {
+    --lightblue: #5bc8dd;
+    --darkblue: #3c429b;
+    --purple: #6154a4;
+}
+
+body {
+    font-family: consolas, verdana, sans-serf;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f3f3f3;
+    color: var(--purple)
+}
+
+header img {
+    max-width: 250px;
+    margin: 1rem;
+}
+
+header ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+#player li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin-right: 1rem;
+}
+#player li img {
+    width: 32px;
+    height: auto;
+    margin: 0;
+}
+
+/* CANVAS */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+canvas {
+    background-color: white;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 1px solid #ccc;
+    margin: 1rem auto;
+    z-index: 12;
+}
+
+/* NOTEBOOK */
+#notebook {
+    display: block;
+    background: rgba(0,0,0,.5);
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    min-height: 70vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Gaegu', cursive;
+}
+#notebook table {
+    width: 90%;
+    border-spacing: 0;
+}
+#notebook td {
+    border-bottom: 1px solid #ccc;
+}
+#notebook-page {
+    width: 300px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(icons/binderside.png);
+    background-repeat: repeat-y;
+    background-size: 25px auto;
+    padding-left: 50px;
+    min-height: 50vh;
+    font-size: 1.3rem;
+}
+#notebookToggler, #infoToggler {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    gap: 5px;
+    background: var(--darkblue);
+    color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 5px 5px 10px;
+}
+#notebookToggler img {
+    width: 32px;
+    margin: 0;
+}
+#closeNotebook {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+/* INFOSCREEN */
+#info {
+    display: none;
+    background: rgba(0,0,0,.5);
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#info-page {
+    max-width: 50rem;
+    padding: 1rem;
+    background: #fff;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* DEFAULT CLASSES */
+.shortcut {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background: #f3f3f3;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: 2px 1px 1px #ccc;
+    color: #333;
+}
+
+.illustration {
+    display: inline-block;
+}
+.illustration img {
+    width: 32px;
+    height: auto;
+}

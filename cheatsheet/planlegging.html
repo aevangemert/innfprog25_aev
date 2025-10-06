@@ -16,8 +16,48 @@
         <label for="password">
         <input type="text" id="password">
         </label>
-        <button>Logg inn</button>
-        <a href=#>Glemt passord?</a>
+        <button id="loginbtn">Logg inn</button>
+        <a href="#">Glemt passord?</a>
     </section>
+    <script>
+
+        const users = [
+            {
+                email: "annaeva@hiof.no",
+                password: "banan"
+            }
+        ]
+        //LOGIN
+        //TA IMOT INPUT FRA BRUKER
+            //EPOST VERDI
+            //PASSORD VERDI
+
+        //BUTTON
+        function verifyUser(){
+            const eMail = document.getElementById("email").value
+            const password = document.getElementById("passord").value
+            //SENDE INFORMASJON OG SJEKKE ETTER BRUKER
+            //FILTER
+            const filteredUser = user.filter(user => users.email === eMail && user.password === password)
+            //IF
+            //hvis filteredUser[0] er tom skal noe skje
+            if(!filteredUser.length <= 0){
+                console.log("Feil e-post eller passord")
+            } else{
+                console.log("Logget inn med " + eMail)
+            }
+            //hvis ikke, skal noe annet skje
+        }
+        //lagre knapp i variabeø
+        const loginBtn = document.getElementById("loginbtn")
+        //lytte etter klikk
+        loginBtn.addEventListener("click", () => {
+            verifyUser()
+        })
+        //LINK
+            //SENDE BRUKER TIL SKJEMA FOR GLEMT PASSORD
+
+
+    </script>
   </body>
 </html>
