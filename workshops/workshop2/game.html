@@ -13,11 +13,11 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body>
+  <body>
     <header>
         <section id="player">
             <ul>
-                <li><img src="icons/shield.svg"> <span id="playerName">Marius</span></li>
+                <li><img src="icons/shield.svg"> <span id="playerName">Anna</span></li>
                 <li><img src="icons/energydrink.svg" title="energy"> <span id="energy">3</span></li>
                 <li><img src="icons/notebook.svg"> <span id="notebookItems">0</span></li>
                 <li><img src="icons/solution.svg"> <span id="points">0</span> poeng</li>
@@ -26,8 +26,8 @@
         </section>
         <img src="icons/c3_logo.svg" alt="Code Concept Collector" />
         <nav>
-            <button id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
-            <button id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
+            <button onClick="toggleVisibility(`notebook`)" id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
+            <button onClick="toggleVisibility(`info`)" id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
         </nav>
     </header>
     <main>
@@ -77,7 +77,7 @@
         //PREPARE GAME CONFIG AND VARIABLES
         //TODO: config
         const gameConfig = {
-            playerName: "Jostein",
+            playerName: "Anna",
             energy: 10,
             points: 4000,
             duration: 30
@@ -115,6 +115,78 @@
         }
 
         updateStaticUI()
+
+        //====OPPG 1. lag en funksjon for å skjule/vise notatblokk og informasjonsskjerm====
+        //#notebook
+        //#info
+
+        function toggleVisibility(elementid){
+ 
+            const elem = document.getElementById(elementid)
+
+            console.log(elementid)
+            if(elem.classList.contains("hidden")){
+                elem.style.display = "block"
+                elem.classList.remove("hidden")
+            } else{
+                elem.style.display = "none"
+                elem.classList.add("hidden")
+            }
+        }
+
+        toggleVisibility("info")
+
+        //====OPPG 2. endre synlighet på notatblomm og info-tekst med tastaturet====
+        //
+        //
+        document.addEventListener("keydown", (event) => {
+           //console.log(event.code) for å sjekke at bryk av knappenr funker på nettsiden 
+           if(event.code === "KeyN"){
+            toggleVisibility("notebook")
+           } else if (event.code === "KeyI"){
+            toggleVisibility("info")
+           }
+        })
+
+        //=====OPPG 3. bytt onClick fra oppgave 1 med addEventListeners====
+        const infoTogglerBtn = document.getElementById("infoToggler")
+
+        infoTogglerBtn.addEventListener("click", () => {
+            toggleVisibility("info")
+        })
+        const notebookTogglerBtn = document.getElementById("notebookToggler")
+        notebookTogglerBtn.addEventListener("click", () => {
+            toggleVisibility("notebook")
+        })
+
+        //====OPPG 4. funkjson for å oppdatere HTML-utskrift av én konfigurasjonsverdi====
+        function updateSingleStaticUI(element, value){
+            console.log(element, value)
+            document.getElementById(element).innerHTML = value
+        }
+
+        updateSingleStaticUI("points", 10)
+        updateSingleStaticUI("energy", 60)
+
+        //====OPPG 5. funksjon for å oppdatere konfigurasjonsverider====
+        function updateConfigValue(configType, value){
+            console.log(configType)
+
+            configType === "variables" ? notebook.variables += value : null
+            configType === "arrays" ? notebook.arrays += value : null
+            configType === "loops" ? notebook.loops += value : null
+            configType === "functions" ? notebook.functions += value : null
+
+            configType === "energy" ? notebook.enrgy += value : null
+            configType === "points" ? notebook.points += value : null
+            configType === "duration" ? notebook.duration += value : null
+            
+
+            updateStaticUI()
+        }
+        updateConfigValue("variables", 10)
+        updateConfigValue("arrays", 100)
+
     </script>
-</body>
+  </body>
 </html>
