@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasjon i Canvas</title>
+</head>
+  <body>
+    <canvas id="drawingarea"></canvas>
+        <script>
+            const canvas = document.getElementById("drawingarea")
+            
+            const ctx = canvas.getContext("2d")
+
+            canvas.width = 800
+            canvas.height = 600
+
+            //gjør klar
+            const ball = {
+                x: canvas.width / 2,
+                y: canvas.height / 2,
+                radius: 20,
+                speedX: 3,
+                speedY: 3
+            }
+
+            requestAnimationFrame = 
+            window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            window.mozRequestAnimationFrame
+   
+            //funksjon for å tegne element
+            function drawBall(){
+                if(ball.y + ball.radius > canvas.height){
+                    ball.speedY = -ball.speedY
+                }
+                if(ball.x + ball.radius > canvas.width){
+                    ball.speedX = -ball.speedX
+                }
+                if(ball.y <= 0 + ball.radius){
+                    ball.speedY = ball.speedY * -1
+                }
+                if(ball.x - ball.radius <= 0){
+                    ball.speedX = ball.speedX * -1
+                }
+              
+                //oppdatering av positioner
+                ball.x+= ball.speedX
+                ball.y+= ball.speedY
+
+                //kollisjonsdeteksjon
+                //sjekke hvis ball.y er større enn canvas.height
+
+                
+                //"sletter" elementer i canvas før ny tegning
+                ctx.clearRect(0, 0, canvas.width, canvas.height)
+                ctx.beginPath()
+                ctx.fillStyle = "#ff69b4"
+                ctx.arc(ball.x, ball.y, ball.radius, 0, 2 * Math.PI)
+                ctx.fill()
+                ctx.closePath()
+
+                requestAnimationFrame(drawBall)
+            }
+
+            drawBall()
+
+            //tar imot to parametere
+            // setInterval(() => {
+            //     ball.x += 5
+            //     drawBall()
+            //     console.log(ball.x, ball.y)
+            // }, 100)
+        </script>
+    </body>
+</html>
