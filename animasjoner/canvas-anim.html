@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animasjon i Canvas</title>
+    <link rel="stylesheet" href="border-box.css">
 </head>
   <body>
     <canvas id="drawingarea"></canvas>
@@ -44,8 +45,39 @@
                 if(ball.x - ball.radius <= 0){
                     ball.speedX = ball.speedX * -1
                 }
+
+            //annen måte å skrive if else test på
+            //Kollisjonsdeteksjon
+            //Vegger og tak
+                // ball.x + ball.radius >= canvas.width ? ball.speedX = ball.speedX * -1 : null
+                // ball.x - ball.radius <= 0 ? ball.speedX = ball.speedX * -1 : null
+
+                // ball.y + ball.radius >= canvas.height ? ball.speedY = ball.speedY * -1 : null
+                // ball.y - ball.radius <= 0 ? ball.speedY = ball.speedY * -1 : null
+
+
               
-                //oppdatering av positioner
+                // //andre elementer
+                // if(ball.x <= paddle.x && ball.y >= paddle.y && ball.y <= 0 ){
+                //     ball.speedX *= -1
+                // }
+
+                //høyre side av firkant??
+                if(ball.x <= paddle.x + paddle.w && ball.y <= paddle.y + paddle.h){
+                    ball.speedX *= -1
+                }
+
+                if(ball.x <= paddle.x && ball.y <= paddle.y + paddle.h){
+                    ball.speedX *= -1
+                }
+
+                if(ball.y <= paddle.y + paddle.h && ball.x <= paddle.x + paddle.w){
+                    ball.speedY *= -1
+                }
+
+                if()
+
+                //oppdaterer position på ball
                 ball.x+= ball.speedX
                 ball.y+= ball.speedY
 
@@ -53,11 +85,16 @@
                 //sjekke hvis ball.y er større enn canvas.height
 
                 
-                //"sletter" elementer i canvas før ny tegning
+                //"tegner" ballen
                 ctx.clearRect(0, 0, canvas.width, canvas.height)
                 ctx.beginPath()
                 ctx.fillStyle = "#ff69b4"
                 ctx.arc(ball.x, ball.y, ball.radius, 0, 2 * Math.PI)
+                ctx.fill()
+                ctx.closePath()
+
+                ctx.beginPath()
+                ctx.rect(paddle.x,paddle.y,paddle.w,paddle.h)
                 ctx.fill()
                 ctx.closePath()
 

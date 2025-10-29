@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        #drawing-area{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="drawing-area"></canvas>
+
+    <script>
+        const mainColor = "#C28538"
+
+        const canvas = document.getElementById("drawing-area")
+        const ctx = canvas.getContext("2d")
+
+        
+        canvas.width = 800
+        canvas.height = 600
+
+        const rectangle = {
+            x: 100,
+            y: 500,
+            width: 600,
+            height: 200
+        }
+
+        const circle = {
+            x: 200,
+            y: 200,
+            radius: 10
+        }
+
+
+        //Tegne streker
+        ctx.beginPath()
+        ctx.moveTo(0,0)
+        ctx.lineTo(800, 600)
+        ctx.moveTo(800, 0)
+        ctx.lineTo(0, 600)
+        ctx.stroke()
+        ctx.closePath()
+
+        //Tegne rektangel
+        ctx.beginPath()
+        ctx.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height)
+        ctx.fillStyle = mainColor
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+
+        //Tegne sirkel
+        ctx.beginPath()
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI)
+        ctx.fillStyle = "gold"
+        ctx.fill()
+        ctx.closePath()
+
+        //Tekst
+        ctx.beginPath()
+
+        ctx.font = "150px Arial"
+        ctx.strokeText("5", 360, 420)
+
+        ctx.font = "24px Helvetica"
+        ctx.fillStyle = "purple"
+        ctx.fillText("Thor", 200, 200)
+
+        ctx.closePath()
+
+        //Tegne eksisterende bilde inn i Canvas
+
+        const pumpkin = new Image()
+        let pumpkinLoaded = false
+        pumpkin.onload = () => {
+            ctx.drawImage(pumpkin, 0, 0, 64, 64)
+        }
+
+        pumpkin.src = "pumpkin.png"
+
+    </script>
+</body>
+</html>

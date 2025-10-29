@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Animasjon</title>
+    <style>
+        #drawing-area{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="drawing-area"></canvas>
+    <script>
+        const canvas = document.getElementById("drawing-area")
+        canvas.width = 800
+        canvas.height = 600
+
+        const ctx = canvas.getContext("2d")
+
+        const speed = 5
+
+        const ball = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            radius: 50,
+            speedX: -speed,
+            speedY: speed,
+        }
+
+        const paddle1 = {
+            x: 100,
+            y: 100,
+            w: 50,
+            h: 200
+        }
+
+        requestAnimationFrame = window.requestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.webkitRequestAnimationFrame
+
+        function draw(){
+
+            //Kollisjonsdeteksjon
+            //Vegger og tak
+            ball.x + ball.radius >= canvas.width ? ball.speedX = ball.speedX * -1 : null
+            ball.x - ball.radius <= 0 ? ball.speedX = ball.speedX * -1 : null
+
+            ball.y + ball.radius >= canvas.height ? ball.speedY = ball.speedY * -1 : null
+            ball.y - ball.radius <= 0 ? ball.speedY = ball.speedY * -1 : null
+
+
+            ball.x += ball.speedX
+            ball.y += ball.speedY
+
+
+            //Tegn ballen
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            ctx.beginPath()
+            ctx.fillStyle = "#003366"
+            ctx.arc(ball.x, ball.y, ball.radius, 0, 2 * Math.PI)
+            ctx.fill()
+            ctx.closePath()
+
+            ctx.beginPath()
+            ctx.fillStyle = "black"
+            ctx.rect(paddle1.x, paddle1.y, paddle1.w, paddle1.h)
+            ctx.fill()
+
+            requestAnimationFrame(draw)
+        }
+
+        draw()
+        
+    </script>
+</body>
+</html>
+
