@@ -151,7 +151,7 @@
 
       // Config-objekt
       const gameConfig = {
-        playerName: "Anna",
+        playerName: "Thor",
         energy: 10,
         points: 4000,
         duration: 30,
@@ -306,10 +306,10 @@
         }
       }
 
-      requestAnimationFrame = window.requestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
+      requestAnimationFrame = window.mozRequestAnimationFrame ||
       window.msRequestAnimationFrame ||
-      window.webkitRequestAnimationFrame 
+      window.webkitRequestAnimationFrame ||
+      window.requestAnimationFrame
 
       function drawElements() {
         // ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -346,6 +346,19 @@
       }
 
       drawElements()
+
+      //hvilken brukerinteraksjon må vi ta hensyn til i kode?
+      // -tastatur input
+      //hvilke deler av koden vår kan vi bruke i brukerinteraksjonen?
+      // -addEventListener
+      //hva skal endres i koden når vi kjenner (eller hører) brukerinteraksjonen?
+      // -retnings-boolean
+      //når skal endringen starte?
+      // - når retnings-boolean er sann (?)
+      // - ved tastetrykk? keydown
+      //når skal endringen stoppe?
+      // - opphevet tastetrykk. keyup
+
     </script>
   </body>
 </html>
