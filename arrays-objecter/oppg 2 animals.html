@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animals</title>
 </head>
+
 <body>
     <p id="setning"></p>
 
     <script>
-    //Lag variabel med array:
-    const dyr = ["Hund", "Katt", "Måke", "Hest", "Pinnsvin", "Ekorn", "Sau", "Geit", "Gris", "Ku"]
-    //Lag oversatt array:
-    const animals = ["Dog", "Cat", "Seagull", "Horse", "Hedgehog", "Squirell", "Sheep", "Goat", "Pig", "Cow"]
+        //Lag variabel med array:
+        const dyr = ["Hund", "Katt", "Måke", "Hest", "Pinnsvin", "Ekorn", "Sau", "Geit", "Gris", "Ku"]
+        //Lag oversatt array:
+        const animals = ["Dog", "Cat", "Seagull", "Horse", "Hedgehog", "Squirell", "Sheep", "Goat", "Pig", "Cow"]
 
-    //Template literal med dyrene og oversettelser på index 2 og 8
-    const tekst = `${dyr[2]} er et dyr. Det heter ${animals[2]} på engelsk.
+        //Template literal med dyrene og oversettelser på index 2 og 8
+        const tekst = `${dyr[2]} er et dyr. Det heter ${animals[2]} på engelsk.
     ${dyr[8]} er også et dyr, som heter ${animals[8]} på engelsk.`
 
-    //Skriv ut setningen til p#utskrift:
-    document.getElementById("setning").innerHTML = tekst
+        //Skriv ut setningen til p#utskrift:
+        document.getElementById("setning").innerHTML = tekst
 
     </script>
-    
+
 </body>
+
 </html>
