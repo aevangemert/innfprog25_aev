@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brukerinput</title>
 </head>
+
 <body>
     <!--knapp med html-attributt-->
     <button onClick="printMessage()">Try me</button>
@@ -13,32 +15,32 @@
     <button id="printEventMessage">Trigger event</button>
 
     <!--skjema-->
-     <label for="name">
-         Name:
-         <input type="text" id="name">
+    <label for="name">
+        Name:
+        <input type="text" id="name">
     </label>
-      <button id="submitform">Submit</button>
-        <script>
-            function printMessage(year){
+    <button id="submitform">Submit</button>
+    <script>
+        function printMessage(year) {
             //const year = new Date().getFullYear()
             console.log("Hei, verden, året er " + year)
         }
 
         //Knapp med EventListener
-        function printEventMessage(){
+        function printEventMessage() {
             console.log("Hei, verden, igjen")
         }
         const eventBtn = document.getElementById("printEventMessage")
-        
+
         eventBtn.addEventListener("click", () => {
             printEventMessage()
         })
 
         //ta imot brukerinput fra skjemafelt
 
-        function getUserInput(){
+        function getUserInput() {
             let getUserName = document.getElementById("name")
-           // console.log(getUserName.value)
+            // console.log(getUserName.value)
             userArray.push(getUserName.value)
 
             console.log(userArray)
@@ -53,5 +55,6 @@
             getUserInput()
         })
     </script>
-  </body>
+</body>
+
 </html>

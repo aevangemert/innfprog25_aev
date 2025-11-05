@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
+
 <body>
     <header>
         <section id="player">
@@ -26,7 +28,8 @@
         </section>
         <img src="icons/c3_logo.svg" alt="Code Concept Collector" />
         <nav>
-            <button id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
+            <button id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span
+                    class="shortcut">n</span></button>
             <button id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
         </nav>
     </header>
@@ -34,7 +37,7 @@
         <canvas id="anim-area"></canvas>
         <section id="notebook">
             <div id="notebook-page">
-                
+
                 <h2>Notater</h2>
                 <table>
                     <tr>
@@ -63,13 +66,27 @@
         <section id="info" class="hidden">
             <div id="info-page">
                 <h2>Info / Hvordan spille C<sup>3</sup></h2>
-                <p>Målet med spiller er at programmeringsstudenten Fortran <span class="illustration">(<img src="icons/fortran.svg" />)</span> skal samle programmeringskonseptene variabler <span class="illustration">(<img src="icons/variable.svg" />)</span>, arrayer <span class="illustration">(<img src="icons/array.svg" />)</span>, løkker <span class="illustration">(<img src="icons/loop.svg" />)</span> og funksjoner <span class="illustration">(<img src="icons/function.svg" />)</span> i kladdeboka <span class="illustration">(<img src="icons/notebook.svg" />)</span> si.</p>
-                <p>Etterhvert kan Fortran bruke de oppsamlede konseptene for å løse oppgaver <span class="illustration">(<img src="icons/puzzle.svg" />)</span>. Det koster en energi <span class="illustration">(<img src="icons/energydrink.svg" />)</span>. Dersom Fortran ikke løser oppgaven korrekt, mister han enda en energi, i tillegg til å ha brukt opp programmeringskonseptene han har brukt i oppgaven.</p>
-                <p>Gjennom spillet samler Fortran de nevnte konseptene og energidrikker. Men, det vil også komme bugs <span class="illustration">(<img src="icons/bug.svg" />)</span>! Pass på så Fortran ikke samler bugs, de koster det en energidrikke og løse opp!</p>
+                <p>Målet med spiller er at programmeringsstudenten Fortran <span class="illustration">(<img
+                            src="icons/fortran.svg" />)</span> skal samle programmeringskonseptene variabler <span
+                        class="illustration">(<img src="icons/variable.svg" />)</span>, arrayer <span
+                        class="illustration">(<img src="icons/array.svg" />)</span>, løkker <span
+                        class="illustration">(<img src="icons/loop.svg" />)</span> og funksjoner <span
+                        class="illustration">(<img src="icons/function.svg" />)</span> i kladdeboka <span
+                        class="illustration">(<img src="icons/notebook.svg" />)</span> si.</p>
+                <p>Etterhvert kan Fortran bruke de oppsamlede konseptene for å løse oppgaver <span
+                        class="illustration">(<img src="icons/puzzle.svg" />)</span>. Det koster en energi <span
+                        class="illustration">(<img src="icons/energydrink.svg" />)</span>. Dersom Fortran ikke løser
+                    oppgaven korrekt, mister han enda en energi, i tillegg til å ha brukt opp programmeringskonseptene
+                    han har brukt i oppgaven.</p>
+                <p>Gjennom spillet samler Fortran de nevnte konseptene og energidrikker. Men, det vil også komme bugs
+                    <span class="illustration">(<img src="icons/bug.svg" />)</span>! Pass på så Fortran ikke samler
+                    bugs, de koster det en energidrikke og løse opp!</p>
                 <h2>Hvordan spille</h2>
                 <p>Bruk piltastene for å flytte Fortran rundt og samle konsepter og energidrikker, og unngå bugs.</p>
-                <p>Klikk knappen "Åpne kladdeboka", eller snarveien N for å åpne kladdeboka og se hvor mange konsepter Fortran har samlet.</p>
-                <p>Gå på en oppgave når denne dukker opp for å løse en oppgave for å score poeng. Du får 10 poeng for å løse en oppgave, 1 poeng for hvert konsept du samler.</p>
+                <p>Klikk knappen "Åpne kladdeboka", eller snarveien N for å åpne kladdeboka og se hvor mange konsepter
+                    Fortran har samlet.</p>
+                <p>Gå på en oppgave når denne dukker opp for å løse en oppgave for å score poeng. Du får 10 poeng for å
+                    løse en oppgave, 1 poeng for hvert konsept du samler.</p>
             </div>
         </section>
     </main>
@@ -92,7 +109,7 @@
         }
 
         console.log(gameConfig)
-       
+
         //TODO: notebook
         const notebook = {
             variables: 2,
@@ -113,7 +130,7 @@
         //(BONUS) TODO: function for all prints
         function updateStaticUI() {
             //TODO: print playerinfo to HTML
-            if(gameConfig.playerName === "") {
+            if (gameConfig.playerName === "") {
                 document.getElementById("playerName").innerHTML = "Waiting for player..."
             } else {
                 document.getElementById("playerName").innerHTML = gameConfig.playerName
@@ -121,7 +138,7 @@
             document.getElementById("energy").innerHTML = gameConfig.energy
             document.getElementById("points").innerHTML = gameConfig.points
             document.getElementById("duration").innerHTML = gameConfig.duration
-            
+
             //TODO: print notebook info to HTML
             document.getElementById("variables").innerHTML = notebook.variables
             document.getElementById("loops").innerHTML = notebook.loops
@@ -135,7 +152,7 @@
         function toggleVisibility(elementid) {
             console.log(elementid)
             const elem = document.getElementById(elementid)
-            if(elem.classList.contains("hidden")) {
+            if (elem.classList.contains("hidden")) {
                 elem.style.display = "block"
                 elem.classList.remove("hidden")
             } else {
@@ -146,11 +163,11 @@
 
         //Oppg 2: Endre synlighet på notatbok og info-tekst med tastaturet
         document.addEventListener("keydown", (event) => {
-            if(event.code === "KeyN"){
+            if (event.code === "KeyN") {
                 toggleVisibility("notebook")
-            }else if(event.code === "KeyI"){
+            } else if (event.code === "KeyI") {
                 toggleVisibility("info")
-            }else if(event.code === "KeyP"){
+            } else if (event.code === "KeyP") {
                 // gameConfig.gamePaused === true 
                 // ? gameConfig.gamePaused = false 
                 // : gameConfig.gamePaused === false 
@@ -171,10 +188,10 @@
         // })
 
         //WS2, Oppg 3:
-        document.getElementById("notebookToggler").addEventListener("click", function() {
+        document.getElementById("notebookToggler").addEventListener("click", function () {
             toggleVisibility("notebook")
         })
-        document.getElementById("infoToggler").addEventListener("click", function() {
+        document.getElementById("infoToggler").addEventListener("click", function () {
             toggleVisibility("info")
         })
         //WS2, Oppg 4:
@@ -212,7 +229,7 @@
             fortranLoaded = true
         }
 
-        function drawItem(){
+        function drawItem() {
             let itemImage = new Image()
             itemImage.src = "icons/array.svg"
             itemImage.onload = () => {
@@ -221,20 +238,20 @@
         }
 
         drawItem
-  
-        requestAnimationFrame = window.requestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.msRequestAnimationFrame ||
-        window.webkitRequestAnimationFrame 
-      
 
-        function drawElements(){
-            ctx.clearRect(0,0, canvas.width, canvas.height)
-            if(fortranLoaded = true){
+        requestAnimationFrame = window.requestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame
+
+
+        function drawElements() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            if (fortranLoaded = true) {
                 ctx.drawImage(fortranImage, fortran.x, fortran.y)
             }
 
-            if(gameConfig.gamePaused === true){
+            if (gameConfig.gamePaused === true) {
                 ctx.beginPath()
                 ctx.fillStyle = "red"
                 ctx.font = "3rem Arial"
@@ -245,18 +262,19 @@
             } else {
                 gameConfig.pauseText = "Press P to pause"
             }
-                ctx.beginPath()
-                ctx.fillStyle = "#ffffff"
-                ctx.fillRect(canvas.width -150, canvas.height - 25, 150, 25)
-                ctx.fillStyle = "#3c429b"
-                ctx.font = "1rem Arial"
-                ctx.fillText(gameConfig.pauseText, canvas.width - 143, canvas.height - 7)
-                ctx.closePath()
+            ctx.beginPath()
+            ctx.fillStyle = "#ffffff"
+            ctx.fillRect(canvas.width - 150, canvas.height - 25, 150, 25)
+            ctx.fillStyle = "#3c429b"
+            ctx.font = "1rem Arial"
+            ctx.fillText(gameConfig.pauseText, canvas.width - 143, canvas.height - 7)
+            ctx.closePath()
 
             requestAnimationFrame(drawElements)
         }
 
         drawElements()
     </script>
-  </body>
+</body>
+
 </html>

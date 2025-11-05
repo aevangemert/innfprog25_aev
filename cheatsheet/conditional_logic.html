@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conditional logic - Clean Sheet</title>
 </head>
+
 <body>
     <h2>Are you qualified for taking the drivers license?</h2>
     <p id="carmsg"></p>
@@ -15,46 +17,47 @@
 
     <script>
 
-//Drivers license
-const age = 22
-const tg_passed = true
-//If-test
-if(age >= 18 && tg_passed === true){
-document.getElementByID("carmsg").innerHTML = "Yes"
-} else{
-    document.getElementById("carmsg").innerHTML = "No"
-}
+        //Drivers license
+        const age = 22
+        const tg_passed = true
+        //If-test
+        if (age >= 18 && tg_passed === true) {
+            document.getElementByID("carmsg").innerHTML = "Yes"
+        } else {
+            document.getElementById("carmsg").innerHTML = "No"
+        }
 
-//Declares the variables door_locked with the value true and backpack with the value "key"
-const door_locked = true
-const backpack = "key"
+        //Declares the variables door_locked with the value true and backpack with the value "key"
+        const door_locked = true
+        const backpack = "key"
 
-let utskrift = document.getElementById("doormsg")
+        let utskrift = document.getElementById("doormsg")
 
-//Check if door is locked, or if player has key in backpack
-//If the door is open we write out "Yes". If the door is locked and the player has "key" in backpack, we write out "Yes", else we write out "No"
-if(door_locked === false){
-    utskrift.innerHTML = "Yes"
-} else {
-    if(backpack === "key"){
-        utskrift.innerHTML = "Yes"
-    } else {
-        utskrift.innerHTML = "No"
-    }
-}
+        //Check if door is locked, or if player has key in backpack
+        //If the door is open we write out "Yes". If the door is locked and the player has "key" in backpack, we write out "Yes", else we write out "No"
+        if (door_locked === false) {
+            utskrift.innerHTML = "Yes"
+        } else {
+            if (backpack === "key") {
+                utskrift.innerHTML = "Yes"
+            } else {
+                utskrift.innerHTML = "No"
+            }
+        }
 
-//Saving HTML-element in a variable to ble able to refer to it more easily later
-let retiremsg = document.getElementById("retire")
+        //Saving HTML-element in a variable to ble able to refer to it more easily later
+        let retiremsg = document.getElementById("retire")
 
-//Check of possible retire age
-if(age >= 62 && age < 67) {
-    retiremsg.innerHTML = "You can retire with AFP"
-} else if(age >= 67) {
-    retiremsg.innerHTML = "You can retire with full pension"
-} else {
-    retiremsg.innerHTML = `You can retire with AFP in ${62 - age} years. and full pension in ${67 - age} years.`
-}
+        //Check of possible retire age
+        if (age >= 62 && age < 67) {
+            retiremsg.innerHTML = "You can retire with AFP"
+        } else if (age >= 67) {
+            retiremsg.innerHTML = "You can retire with full pension"
+        } else {
+            retiremsg.innerHTML = `You can retire with AFP in ${62 - age} years. and full pension in ${67 - age} years.`
+        }
 
     </script>
-  </body>
+</body>
+
 </html>

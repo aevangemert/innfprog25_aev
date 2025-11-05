@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canvas</title>
     <style>
-        #drawing-area{
+        #drawing-area {
             border: 2px solid black;
         }
     </style>
 </head>
+
 <body>
     <canvas id="drawing-area"></canvas>
 
@@ -19,7 +21,7 @@
         const canvas = document.getElementById("drawing-area")
         const ctx = canvas.getContext("2d")
 
-        
+
         canvas.width = 800
         canvas.height = 600
 
@@ -39,7 +41,7 @@
 
         //Tegne streker
         ctx.beginPath()
-        ctx.moveTo(0,0)
+        ctx.moveTo(0, 0)
         ctx.lineTo(800, 600)
         ctx.moveTo(800, 0)
         ctx.lineTo(0, 600)
@@ -85,4 +87,5 @@
 
     </script>
 </body>
+
 </html>

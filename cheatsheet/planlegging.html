@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planlegging</title>
 </head>
+
 <body>
     <section>
         <h2>Logg inn</h2>
@@ -14,7 +16,7 @@
         </label>
 
         <label for="password">
-        <input type="text" id="password">
+            <input type="text" id="password">
         </label>
         <button id="loginbtn">Logg inn</button>
         <a href="#">Glemt passord?</a>
@@ -29,11 +31,11 @@
         ]
         //LOGIN
         //TA IMOT INPUT FRA BRUKER
-            //EPOST VERDI
-            //PASSORD VERDI
+        //EPOST VERDI
+        //PASSORD VERDI
 
         //BUTTON
-        function verifyUser(){
+        function verifyUser() {
             const eMail = document.getElementById("email").value
             const password = document.getElementById("passord").value
             //SENDE INFORMASJON OG SJEKKE ETTER BRUKER
@@ -41,9 +43,9 @@
             const filteredUser = user.filter(user => users.email === eMail && user.password === password)
             //IF
             //hvis filteredUser[0] er tom skal noe skje
-            if(!filteredUser.length <= 0){
+            if (!filteredUser.length <= 0) {
                 console.log("Feil e-post eller passord")
-            } else{
+            } else {
                 console.log("Logget inn med " + eMail)
             }
             //hvis ikke, skal noe annet skje
@@ -55,9 +57,10 @@
             verifyUser()
         })
         //LINK
-            //SENDE BRUKER TIL SKJEMA FOR GLEMT PASSORD
+        //SENDE BRUKER TIL SKJEMA FOR GLEMT PASSORD
 
 
     </script>
-  </body>
+</body>
+
 </html>
