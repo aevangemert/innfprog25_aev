@@ -280,6 +280,7 @@
       updateConfigValue(gameConfig, "energy", 100)
 
 
+
       let fortranLoaded = false
       let fortranImage = new Image()
       fortranImage.src = "icons/fortran.png"
@@ -305,10 +306,10 @@
         }
       }
 
-      requestAnimationFrame = window.requestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
+      requestAnimationFrame = window.mozRequestAnimationFrame ||
       window.msRequestAnimationFrame ||
-      window.webkitRequestAnimationFrame 
+      window.webkitRequestAnimationFrame ||
+      window.requestAnimationFrame
 
       function drawElements() {
         // ctx.clearRect(0, 0, canvas.width, canvas.height)

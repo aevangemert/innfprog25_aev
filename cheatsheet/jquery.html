@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <!--Ekstrernt bibliotek-->
+    <style>
+        section{
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            width: fit-content;
+            padding: 2rem;
+            gap: 1rem;
+            border-radius: .5rem;
+
+            article{
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                padding: 2rem;
+                border-radius: .5rem;
+            }
+
+            button{
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <section>
+        <article>
+            <h1>Første overskrift</h1>
+            <p>Avsnitt med noe spennende innhold</p>
+            <button id="add">Endre første overskrift</button>
+        </article>
+        <article>
+            <h2>Andre overskrift</h2>
+            <p>Avsnitt med noe spennende innhol</p>
+            <button>Endre andre overskrift</button>
+        </article>
+        <article>
+            <h2>Tredje overskrift</h2>
+            <p>Avsnitt med noe spennende innhol</p>
+            <button>Endre tredje overskrift</button>
+        </article>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"> </script>
+    <script>
+        $(document).ready(() => {
+            $("section article:nth-child(1)").css("background-color", "grey")
+            
+            $("#add").click(() => {
+                console.log("Knappen er trykket")
+                $("section article:nth-child(1) h2").val("Første overskrift er endret!")
+            })
+        })
+    </script>
+</body>
+</html>
